@@ -34,26 +34,9 @@ jobs:
         run: |
           export CTOOLS_BUILD=all
           ./acore.sh compiler build
-      # new step: confirm exist directory
-      - name: Debug Directory
-        shell: powershell
-        run: |
-          Get-ChildItem -Path "azerothcore-wotlk/env" -Recurse
-      # new step: zip directory
-      - name: Zip Artifacts
-        shell: powershell
-        run: |
-          $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-          $zipName = "acore-env-$timestamp.zip"
-          Compress-Archive `
-            -Path "azerothcore-wotlk/env\*" `
-            -DestinationPath $zipName `
-            -CompressionLevel Optimal
-          echo "ZIP_PATH=$zipName" >> $env:GITHUB_ENV
-
       # new step: upload to Artifacts
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: acore-env-build
-          path: ${{ env.ZIP_PATH }}
+          path: /d/a/azerothcore-wotlk/azerothcore-wotlk
