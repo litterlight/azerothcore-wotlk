@@ -36,7 +36,7 @@ jobs:
           ./acore.sh compiler build
       # new step: upload to Artifacts
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: acore-env-build
           path: /d/a/azerothcore-wotlk/azerothcore-wotlk
