@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: acore-env-build
-          path: /d/a/azerothcore-wotlk/azerothcore-wotlk
+          path: azerothcore-wotlk/env
