@@ -20,7 +20,13 @@ jobs:
     env:
       BOOST_ROOT: C:\local\boost_1_82_0
     steps:
-      - uses: actions/checkout@v4
+      - name: Check AzerothCore
+        uses: actions/checkout@v4
+      - name: Checkout Playerbot Module
+        uses: actions/checkout@v4
+        with:
+          repository: 'litterlight/mod-playerbots'
+          path: 'modules/mod-playerbots'
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.13
       - name: Configure OS
